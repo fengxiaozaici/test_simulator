@@ -49,7 +49,7 @@ function getOne(i,j){
         var bias=0.01/upcraft5.length;
         for(var r=0;r<upcraft5.length;r=r+1){   //up
             if(rand>=0.01+r*bias&&rand<0.01+(r+1)*bias){
-                imgurl="http://file.fgowiki.591mogu.com/fgo/head/"+upcraft5[r]+".jpg";
+                imgurl="http://fgowiki.com/fgo/equip/"+upcraft5[r]+".jpg";
                 $("#r_"+i).attr("src",imgurl);
                 $("#craft5").append("<img class=\"img-thumbnail\" src=\""+imgurl+"\"></img> ");
                 return;
@@ -124,9 +124,8 @@ function getOne(i,j){
     var bias=0.1/upcraft3.length;
     for(var r=0;r<upcraft3.length;r=r+1){   //up
         if(rand>=0.6+r*bias&&rand<0.6+(r+1)*bias){
-            imgurl="http://file.fgowiki.591mogu.com/fgo/head/"+upcraft3[r]+".jpg";
+            imgurl="http://fgowiki.com/fgo/equip/"+upcraft3[r]+".jpg";
             $("#r_"+i).attr("src",imgurl);
-            $("#craft3").append("<img class=\"img-thumbnail\" src=\""+imgurl+"\"></img> ");
             return;
         }
     }     
