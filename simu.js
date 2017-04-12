@@ -5,6 +5,7 @@ var alter=0;
 var serv5=new Array("002","008","037","052","059","060","062","065","075","076","084","085","097");
 var craft5=new Array("031","032","033","034","035","040","048","057","058","067","075","097","175");    //加入宇宙棱镜
 var serv4=new Array("006","010","011","014","018","029","030","041","046","047","048","058","066","074","082","087","089","094","100","101");
+var upserv4=new Array("131","132","134");
 var serv3=new Array("007","009","013","015","017","020","022","023","026","027","028","031","035","042","049","055","056","063","064","071","072","079","080","081","095","104","105");
 var craft4=new Array("021","022","023","024","025","026","027","028","029","030","038","039","047","056","066","073","074","098","176");
 var upcraft4=new Array("182","183","184");
@@ -53,9 +54,18 @@ function getOne(i,j){
     }
     if(rand<0.08){  //4,servant
         log[i]=0;
-        var bias=(0.08-0.05)/serv4.length;
-        for(var r=0;r<serv4.length;r=r+1){
+        var bias=0.015/upserv4.length;
+        for(var r=0;r<upserv4.length;r=r+1){   //up
             if(rand>=0.05+r*bias&&rand<0.05+(r+1)*bias){
+                imgurl="http://file.fgowiki.591mogu.com/fgo/head/"+upserv4[r]+".jpg";
+                $("#r_"+i).attr("src",imgurl);
+                $("#craft4").append("<img class=\"img-thumbnail\" src=\""+imgurl+"\"></img> ");
+                return;
+            }
+        }        
+        bias=(0.08-0.065)/serv4.length;
+        for(var r=0;r<serv4.length;r=r+1){     //not up
+            if(rand>=0.065+r*bias&&rand<0.065+(r+1)*bias){
                 imgurl="http://file.fgowiki.591mogu.com/fgo/head/"+serv4[r]+".jpg";
                 $("#r_"+i).attr("src",imgurl);
                 $("#serv4").append("<img class=\"img-thumbnail\" src=\""+imgurl+"\"></img> ");
