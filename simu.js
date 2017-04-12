@@ -59,7 +59,7 @@ function getOne(i,j){
             if(rand>=0.05+r*bias&&rand<0.05+(r+1)*bias){
                 imgurl="http://file.fgowiki.591mogu.com/fgo/head/"+upserv4[r]+".jpg";
                 $("#r_"+i).attr("src",imgurl);
-                $("#craft4").append("<img class=\"img-thumbnail\" src=\""+imgurl+"\"></img> ");
+                $("#serv4").append("<img class=\"img-thumbnail\" src=\""+imgurl+"\"></img> ");
                 return;
             }
         }        
