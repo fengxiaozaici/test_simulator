@@ -3,13 +3,16 @@ var times=0;
 var alter=0;
 //0:4serv,1:3serv,2:4craft,3:3craft
 var serv5=new Array("002","008","037","052","059","060","062","065","075","076","084","085","097","113","118");
-var craft5=new Array("031","032","033","034","035","040","048","057","058","067","075","097","175");     
+
+var craft5=new Array("031","032","033","034","035","040","048","057","058","067","075","097","175","185","188","263");     
+var upcraft5=new Array("291","292");    
 var serv4=new Array("006","010","011","014","018","029","030","041","046","047","048","058","066","074","082","087","089","094","100","101","109","116","120","121");
 var upserv4=new Array("131","132","134");
 var serv3=new Array("007","009","013","015","017","020","022","023","026","027","028","031","035","042","049","055","056","063","064","071","072","079","080","081","095","104","105","110","117","124","125");
-var craft4=new Array("021","022","023","024","025","026","027","028","029","030","038","039","047","056","066","073","074","098","176");
-var upcraft4=new Array("182","183","184");
-var craft3=new Array("037","042","046","055","065","072","089","090","091","092","093","094","095","096","177");
+var craft4=new Array("021","022","023","024","025","026","027","028","029","030","038","039","047","056","066","073","074","098","176","182","183","184","186","264");
+var upcraft4=new Array("293");
+var craft3=new Array("037","042","046","055","065","072","089","090","091","092","093","094","095","096","177","243","244","245","246","247","265");
+var upcraft3=new Array("294");
 
 
 function getOne(i,j){
@@ -43,9 +46,18 @@ function getOne(i,j){
     }
     if(rand<0.05){  //5,craft
         log[i]=2;
-        var bias=(0.05-0.01)/craft5.length;
-        for(var r=0;r<craft5.length;r=r+1){
+        var bias=0.01/upcraft5.length;
+        for(var r=0;r<upcraft5.length;r=r+1){   //up
             if(rand>=0.01+r*bias&&rand<0.01+(r+1)*bias){
+                imgurl="http://file.fgowiki.591mogu.com/fgo/head/"+upcraft5[r]+".jpg";
+                $("#r_"+i).attr("src",imgurl);
+                $("#craft5").append("<img class=\"img-thumbnail\" src=\""+imgurl+"\"></img> ");
+                return;
+            }
+        } 
+        bias=(0.05-0.02)/craft5.length;
+        for(var r=0;r<craft5.length;r=r+1){
+            if(rand>=0.02+r*bias&&rand<0.02+(r+1)*bias){
                 imgurl="http://fgowiki.com/fgo/equip/"+craft5[r]+".jpg";
                 $("#r_"+i).attr("src",imgurl);
                 $("#craft5").append("<img class=\"img-thumbnail\" src=\""+imgurl+"\"></img> ");
@@ -109,9 +121,18 @@ function getOne(i,j){
     }
     //3,craft
     log[i]=3;
-    var bias=(1-0.6)/craft3.length;
-    for(var r=0;r<craft3.length;r=r+1){     //not up
+    var bias=0.1/upcraft3.length;
+    for(var r=0;r<upcraft3.length;r=r+1){   //up
         if(rand>=0.6+r*bias&&rand<0.6+(r+1)*bias){
+            imgurl="http://file.fgowiki.591mogu.com/fgo/head/"+upcraft3[r]+".jpg";
+            $("#r_"+i).attr("src",imgurl);
+            $("#craft3").append("<img class=\"img-thumbnail\" src=\""+imgurl+"\"></img> ");
+            return;
+        }
+    }     
+    bias=(1-0.7)/craft3.length;
+    for(var r=0;r<craft3.length;r=r+1){     //not up
+        if(rand>=0.7+r*bias&&rand<0.7+(r+1)*bias){
             imgurl="http://fgowiki.com/fgo/equip/"+craft3[r]+".jpg";
             $("#r_"+i).attr("src",imgurl);
             return;
