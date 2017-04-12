@@ -88,7 +88,7 @@ function getOne(i,j){
     }
     if(rand<0.2){   //4,craft
         log[i]=2;
-        var bias=0.072/upcraft4.length;
+        var bias=0.04/upcraft4.length;
         for(var r=0;r<upcraft4.length;r=r+1){   //up
             if(rand>=0.08+r*bias&&rand<0.08+(r+1)*bias){
                 imgurl="http://fgowiki.com/fgo/equip/"+upcraft4[r]+".jpg";
@@ -97,7 +97,7 @@ function getOne(i,j){
                 return;
             }
         }
-        bias=(0.2-0.152)/craft4.length;
+        bias=(0.2-0.12)/craft4.length;
         for(var r=0;r<craft4.length;r=r+1){     //not up
             if(rand>=0.152+r*bias&&rand<0.152+(r+1)*bias){
                 imgurl="http://fgowiki.com/fgo/equip/"+craft4[r]+".jpg";
