@@ -99,7 +99,7 @@ function getOne(i,j){
         }
         bias=(0.2-0.12)/craft4.length;
         for(var r=0;r<craft4.length;r=r+1){     //not up
-            if(rand>=0.152+r*bias&&rand<0.152+(r+1)*bias){
+            if(rand>=0.12+r*bias&&rand<0.12+(r+1)*bias){
                 imgurl="http://fgowiki.com/fgo/equip/"+craft4[r]+".jpg";
                 $("#r_"+i).attr("src",imgurl);
                 $("#craft4").append("<img class=\"img-thumbnail\" src=\""+imgurl+"\"></img> ");
