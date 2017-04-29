@@ -1,3 +1,4 @@
+// effectively an enum for pool configuration.
 var distMethod = Object.freeze({UNIFORM: 1, GAUSSIAN: 2});
 
 // normally distributed RNG
@@ -161,9 +162,9 @@ function egcd(a, b) {
         return b;
     while (b != 0) {
         if (a > b)
-            a = a - b;
+            a -= b;
         else
-            b = b - a;
+            b -= a;
     }
     return a;
 }
@@ -172,20 +173,42 @@ function egcd(a, b) {
  * A naive gacha pool implementation.
  *
  * Usage:
+ *
+ * // construct a new pool
  * var myPool = new DrawPool();
- * // add items
- * myPool.putItem({item : "Altria Pendragon", rarity : "SSR"}, 5);            // putItem(item, weight)
+ *
+ * // fill the pool with putItem, putMultiItems, putSharedItems, removeItem, removeItems
+ * //
+ * // putItem(item, weight)
+ * // weight MUST be an integer.
+ * //
+ * // putMultiItems(items, weight), effectively calling putItem
+ * // for each element in items with weight
+ * //
+ * // putSharedItems(items, totalWeight), effectively calling putItem
+ * // for each element in items with weight/items.length
+ *
+ * // removeItem(item) and removeItems(items)
+ * // remove an item/multiple items from the pool
+ *
+ * myPool.putItem({item : "Altria Pendragon", rarity : "SSR"}, 5);
  * myPool.putSharedItems([{item : "Emiya", rarity : "SR"},{item : "Lancelot", rarity : "SR"}], 10);
  * myPool.putSharedItems([{item : "Kiyohime", rarity : "R"},{item : "Darius III", rarity : "R"}], 85);
  *
- * // initialise pool
+ * // finalise the pool to get it ready for use
+ * // if you later modify items in the pool, finalisePool()
+ * // needs to be called for changes to take effect
  * myPool.finalisePool();
  *
  * // switch to uniform distribution
  * myPool.dist = distMethod.UNIFORM; // or distMethod.GAUSSIAN, which is default
+ * 
+ * // if using Gaussian pool, it is recommended to make some trial draws before usage.
+ * // myPool.dist = distMethod.GAUSSIAN;
+ * // myPool.draw(10000);
  *
  * // draw items from the pool
- * var gachaResult = myPool.draw(10);
+ * var gachaResult = myPool.draw(10); // do a ten-roll!
  * console.log(gachaResult.map(function(r){return r.item}));
  * // ["Kiyohime", "Darius III", "Darius III", "Kiyohime",
  * // "Kiyohime", "Darius III", "Darius III", "Darius III",
@@ -193,8 +216,6 @@ function egcd(a, b) {
  *
  * myPool.resetPool(); // empty the pool, this only takes effect after another call of 'finalisePool()'.
  *
- * Note: an array of dictionaries/objects of the form { item: 'item_given', tag: 'tag_given' } is returned
- * as result of a draw request. 
  */
 
 DrawPool = function() {
@@ -285,7 +306,7 @@ DrawPool.prototype = {
                 this.weight_sum += this.item_dict[item];
             }
         }
-        // put in normalised weights
+        // put in normalised weights and initialise weights for gaussian pool
         var cul = 0.0;
         for (var i of this.items) {
             var w = i.weight;
