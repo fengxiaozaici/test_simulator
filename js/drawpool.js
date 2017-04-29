@@ -148,6 +148,35 @@ function binarySearch(array, e) {
     return currentIndex;
 }
 
+/**
+ * A naive gacha pool implementation.
+ *
+ * Usage:
+ * var myPool = new DrawPool();
+ * // add items
+ * myPool.putItem("Altria Pendragon", 5, "SSR");            // putItem(item, weight, tag)
+ * myPool.putSharedItems(["Emiya","Lancelot"], 10, "SR");
+ * myPool.putSharedItems(["Kiyohime","Darius III"], 85, "R");
+ *
+ * // initialise pool
+ * myPool.finalisePool();
+ *
+ * // switch to uniform distribution
+ * myPool.dist = distMethod.UNIFORM; // or distMethod.GAUSSIAN, which is default
+ *
+ * // draw items from the pool
+ * var gachaResult = myPool.draw(10);
+ * console.log(gachaResult.map(function(r){return r.item}));
+ * // ["Kiyohime", "Darius III", "Darius III", "Kiyohime",
+ * // "Kiyohime", "Darius III", "Darius III", "Darius III",
+ * // "Kiyohime", "Darius III"]
+ *
+ * myPool.resetPool(); // empty the pool, this only takes effect after another call of 'finalisePool()'.
+ *
+ * Note: an array of dictionaries/objects of the form { item: 'item_given', tag: 'tag_given' } is returned
+ * as result of a draw request. 
+ */
+
 DrawPool = function() {
     this.item_dict = {};
     this.weight_sum = 0.0;
