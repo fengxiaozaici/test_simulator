@@ -40,7 +40,7 @@ var goldPool = new DrawPool();
 //svtPool.dist = distMethod.UNIFORM;
 //goldPool.dist = distMethod.UNIFORM;
 
-pool.gaussianStdev = 1/2;
+pool.gaussianStdev = 1/3;
 svtPool.gaussianStdev = 1/3;
 goldPool.gaussianStdev = 1/3;
 

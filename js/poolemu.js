@@ -3,71 +3,87 @@ var quartz=140;
 var money=0;
 var log = [];
 
+var poolArr = [];
+
 function initialiseDrawPools() {
-    updatePoolConfig();
     
-    if(pickUpServ5 && pickUpServ5.length > 0) {
-        pool.putSharedItems(pickUpServ5, upRate*svt5Rate, cards.pickUpServ5);
-        pool.putSharedItems(serv5, (1-upRate)*svt5Rate, cards.Serv5);
-        svtPool.putSharedItems(pickUpServ5, upRate*svt5Rate, cards.pickUpServ5);
-        svtPool.putSharedItems(serv5, (1-upRate)*svt5Rate, cards.Serv5);
-        goldPool.putSharedItems(pickUpServ5, upRate*svt5Rate, cards.pickUpServ5);
-        goldPool.putSharedItems(serv5, (1-upRate)*svt5Rate, cards.Serv5);
+    var cardArr = tagCards();
+    poolArr = cardArr;
+    
+    pool.resetPool();
+    svtPool.resetPool();
+    goldPool.resetPool();
+    
+    if(cardArr.pickUpServ5 && cardArr.pickUpServ5.length > 0) {
+        pool.putSharedItems(cardArr.pickUpServ5, Math.round(upRate*svt5Rate));
+        pool.putSharedItems(cardArr.Serv5, Math.round((1-upRate)*svt5Rate));
+        svtPool.putSharedItems(cardArr.pickUpServ5, Math.round(upRate*svt5Rate));
+        svtPool.putSharedItems(cardArr.Serv5, Math.round((1-upRate)*svt5Rate));
+        goldPool.putSharedItems(cardArr.pickUpServ5, Math.round(upRate*svt5Rate));
+        goldPool.putSharedItems(cardArr.Serv5, Math.round((1-upRate)*svt5Rate));
     } else {
-        pool.putSharedItems(serv5, svt5Rate, cards.Serv5);
-        svtPool.putSharedItems(serv5, svt5Rate, cards.Serv5);
-        goldPool.putSharedItems(serv5, svt5Rate, cards.Serv5);
+        pool.putSharedItems(cardArr.Serv5, svt5Rate);
+        svtPool.putSharedItems(cardArr.Serv5, svt5Rate);
+        goldPool.putSharedItems(cardArr.Serv5, svt5Rate);
     }
-    if(pickUpServ4 && pickUpServ4.length > 0) {
-        pool.putSharedItems(pickUpServ4, upRate*svt4Rate, cards.pickUpServ4);
-        pool.putSharedItems(serv4, (1-upRate)*svt4Rate, cards.Serv4);
-        svtPool.putSharedItems(pickUpServ4, upRate*svt4Rate, cards.pickUpServ4);
-        svtPool.putSharedItems(serv4, (1-upRate)*svt4Rate, cards.Serv4);
-        goldPool.putSharedItems(pickUpServ4, upRate*svt4Rate, cards.pickUpServ4);
-        goldPool.putSharedItems(serv4, (1-upRate)*svt4Rate, cards.Serv4);
+    if(cardArr.pickUpServ4 && cardArr.pickUpServ4.length > 0) {
+        pool.putSharedItems(cardArr.pickUpServ4, Math.round(upRate*svt4Rate));
+        pool.putSharedItems(cardArr.Serv4, Math.round((1-upRate)*svt4Rate));
+        svtPool.putSharedItems(cardArr.pickUpServ4, Math.round(upRate*svt4Rate));
+        svtPool.putSharedItems(cardArr.Serv4, Math.round((1-upRate)*svt4Rate));
+        goldPool.putSharedItems(cardArr.pickUpServ4, Math.round(upRate*svt4Rate));
+        goldPool.putSharedItems(cardArr.Serv4, Math.round((1-upRate)*svt4Rate));
     } else {
-        pool.putSharedItems(serv4, svt4Rate, cards.Serv4);
-        svtPool.putSharedItems(serv4, svt4Rate, cards.Serv4);
-        goldPool.putSharedItems(serv4, svt4Rate, cards.Serv4);
+        pool.putSharedItems(cardArr.Serv4, svt4Rate);
+        svtPool.putSharedItems(cardArr.Serv4, svt4Rate);
+        goldPool.putSharedItems(cardArr.Serv4, svt4Rate);
     }
-    if(pickUpServ3 && pickUpServ3.length > 0) {
-        pool.putSharedItems(pickUpServ3, upRate*svt3Rate, cards.pickUpServ3);
-        pool.putSharedItems(serv3, (1-upRate)*svt3Rate, cards.Serv3);
-        svtPool.putSharedItems(pickUpServ3, upRate*svt3Rate, cards.pickUpServ3);
-        svtPool.putSharedItems(serv3, (1-upRate)*svt3Rate, cards.Serv3);
+    if(cardArr.pickUpServ3 && cardArr.pickUpServ3.length > 0) {
+        pool.putSharedItems(cardArr.pickUpServ3, Math.round(upRate*svt3Rate));
+        pool.putSharedItems(cardArr.Serv3, Math.round((1-upRate)*svt3Rate));
+        svtPool.putSharedItems(cardArr.pickUpServ3, Math.round(upRate*svt3Rate));
+        svtPool.putSharedItems(cardArr.Serv3, Math.round((1-upRate)*svt3Rate));
     } else {
-        pool.putSharedItems(serv3, svt3Rate, cards.Serv3);
-        svtPool.putSharedItems(serv3, svt3Rate, cards.Serv3);
+        pool.putSharedItems(cardArr.Serv3, svt3Rate);
+        svtPool.putSharedItems(cardArr.Serv3, svt3Rate);
     }
     
-    if(pickUpCft5 && pickUpCft5.length > 0) {
-        pool.putSharedItems(pickUpCft5, upRate*cft5Rate, cards.pickUpCft5);
-        pool.putSharedItems(craft5, (1-upRate)*cft5Rate, cards.Craft5);
-        goldPool.putSharedItems(pickUpCft5, upRate*cft5Rate, cards.pickUpCft5);
-        goldPool.putSharedItems(craft5, (1-upRate)*cft5Rate, cards.Craft5);
+    if(cardArr.pickUpCft5 && cardArr.pickUpCft5.length > 0) {
+        pool.putSharedItems(cardArr.pickUpCft5, Math.round(upRate*cft5Rate));
+        pool.putSharedItems(cardArr.Craft5, Math.round((1-upRate)*cft5Rate));
+        goldPool.putSharedItems(cardArr.pickUpCft5, Math.round(upRate*cft5Rate));
+        goldPool.putSharedItems(cardArr.Craft5, Math.round((1-upRate)*cft5Rate));
     } else {
-        pool.putSharedItems(craft5, cft5Rate, cards.Craft5);
-        goldPool.putSharedItems(craft5, cft5Rate, cards.Craft5);
+        pool.putSharedItems(cardArr.Craft5, cft5Rate);
+        goldPool.putSharedItems(cardArr.Craft5, cft5Rate);
     }
-    if(pickUpCft4 && pickUpCft4.length > 0) {
-        pool.putSharedItems(pickUpCft4, upRate*cft4Rate, cards.pickUpCft4);
-        pool.putSharedItems(craft4, (1-upRate)*cft4Rate, cards.Craft4);
-        goldPool.putSharedItems(pickUpCft4, upRate*cft4Rate, cards.pickUpCft4);
-        goldPool.putSharedItems(craft4, (1-upRate)*cft4Rate, cards.Craft4);
+    if(cardArr.pickUpCft4 && cardArr.pickUpCft4.length > 0) {
+        pool.putSharedItems(cardArr.pickUpCft4, Math.round(upRate*cft4Rate));
+        pool.putSharedItems(cardArr.Craft4, Math.round((1-upRate)*cft4Rate));
+        goldPool.putSharedItems(cardArr.pickUpCft4, Math.round(upRate*cft4Rate));
+        goldPool.putSharedItems(cardArr.Craft4, Math.round((1-upRate)*cft4Rate));
     } else {
-        pool.putSharedItems(craft4, cft4Rate, cards.Craft4);
-        goldPool.putSharedItems(craft4, cft4Rate, cards.Craft4);
+        pool.putSharedItems(cardArr.Craft4, cft4Rate);
+        goldPool.putSharedItems(cardArr.Craft4, cft4Rate);
     }
-    if(pickUpCft3 && pickUpCft3.length > 0) {
-        pool.putSharedItems(pickUpCft3, upRate*cft3Rate, cards.pickUpCft3);
-        pool.putSharedItems(craft3, (1-upRate)*cft3Rate, cards.Craft3);
+    if(cardArr.pickUpCft3 && cardArr.pickUpCft3.length > 0) {
+        pool.putSharedItems(cardArr.pickUpCft3, Math.round(upRate*cft3Rate));
+        pool.putSharedItems(cardArr.Craft3, Math.round((1-upRate)*cft3Rate));
     } else {
-        pool.putSharedItems(craft3, cft3Rate, cards.Craft3);
+        pool.putSharedItems(cardArr.Craft3, cft3Rate);
     }
     
     pool.finalisePool();
     svtPool.finalisePool();
     goldPool.finalisePool();
+    
+    // do some rolls for gaussian distributed pool.
+    pool.draw(10000);
+    svtPool.draw(10000);
+    goldPool.draw(10000);
+    
+    // switch to 
+    updatePoolConfig();
 }
 
 function updatePoolConfig() {
@@ -80,6 +96,19 @@ function updatePoolConfig() {
         svtPool.dist = distMethod.GAUSSIAN;
         goldPool.dist = distMethod.GAUSSIAN;
     }
+}
+
+function tagCards() {
+    var cardArr = { "pickUpServ5" : pickUpServ5, "Serv5" : serv5, "pickUpServ4" : pickUpServ4, "Serv4" : serv4, "pickUpServ3" : pickUpServ3, "Serv3" : serv3, "pickUpCft5" : pickUpCft5, "Craft5" : craft5, "pickUpCft4" : pickUpCft4, "Craft4" : craft4, "pickUpCft3" : pickUpCft3, "Craft3" : craft3};
+    //var cardTag = { 'pickUpServ5' : cards.pickUpServ5, 'serv5' : cards.serv5, 'pickUpServ4' : cards.pickUpServ4, 'serv4' : cards.serv4, 'pickUpServ3' : cards.pickUpServ3, 'serv3' : cards.serv3, 'pickUpCft5' : cards.pickUpCft5, 'craft5' : cards.craft5, 'pickUpCft4' : cards.pickUpCft4, 'craft4' : cards.craft4, 'pickUpCft3' : cards.pickUpCft3, 'craft3' : cards.craft3};
+    for (var i in cardArr) {
+        if (cardArr.hasOwnProperty(i)) {
+            cardArr[i] = cardArr[i].map(function (e) {
+                return { item: e, tag: cards[i] };
+            });
+        }
+    }
+    return cardArr;
 }
 
 function showResult(resultArray) {
