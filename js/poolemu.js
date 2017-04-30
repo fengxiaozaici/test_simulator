@@ -50,6 +50,7 @@ function setUpRate() {
     cft5UpRate = parseInt($("#cft5UpRate").val()) / 100;
     cft4UpRate = parseInt($("#cft4UpRate").val()) / 100;
     cft3UpRate = parseInt($("#cft3UpRate").val()) / 100;
+    resetUpRate();
     resetPools();
 }
  
@@ -63,12 +64,13 @@ function resetUpRate() {
 }
 
 function setDropRate() {
-    svt5Rate = parseInt($("#serv5Rate").val()) * 100;
-    svt4Rate = parseInt($("#serv4Rate").val()) * 100;
-    svt3Rate = parseInt($("#serv3Rate").val()) * 100;
-    cft5Rate = parseInt($("#cft5Rate").val()) * 100;
-    cft4Rate = parseInt($("#cft4Rate").val()) * 100;
-    cft3Rate = parseInt($("#cft3Rate").val()) * 100;
+    svt5Rate = Math.round(parseFloat($("#serv5Rate").val()) * 100);
+    svt4Rate = Math.round(parseFloat($("#serv4Rate").val()) * 100);
+    svt3Rate = Math.round(parseFloat($("#serv3Rate").val()) * 100);
+    cft5Rate = Math.round(parseFloat($("#cft5Rate").val()) * 100);
+    cft4Rate = Math.round(parseFloat($("#cft4Rate").val()) * 100);
+    cft3Rate = Math.round(parseFloat($("#cft3Rate").val()) * 100);
+    resetDropRate();
     resetPools();
 }
  
