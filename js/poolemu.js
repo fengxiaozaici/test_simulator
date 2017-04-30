@@ -75,12 +75,12 @@ function setDropRate() {
 }
  
 function resetDropRate() {
-    $("#serv5Rate").val((svt5Rate/100 | 0).toString());
-    $("#serv4Rate").val((svt4Rate/100 | 0).toString());
-    $("#serv3Rate").val((svt3Rate/100 | 0).toString());
-    $("#cft5Rate").val((cft5Rate/100 | 0).toString());
-    $("#cft4Rate").val((cft4Rate/100 | 0).toString());
-    $("#cft3Rate").val((cft3Rate/100 | 0).toString());
+    $("#serv5Rate").val((svt5Rate/100).toString());
+    $("#serv4Rate").val((svt4Rate/100).toString());
+    $("#serv3Rate").val((svt3Rate/100).toString());
+    $("#cft5Rate").val((cft5Rate/100).toString());
+    $("#cft4Rate").val((cft4Rate/100).toString());
+    $("#cft3Rate").val((cft3Rate/100).toString());
 }
 
 function resetPools() {
