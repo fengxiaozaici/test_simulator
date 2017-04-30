@@ -167,12 +167,16 @@ function initialiseDrawPools(cardPool) {
     svtPool.finalisePool();
     goldPool.finalisePool();
     
+    pool.dist = distMethod.GAUSSIAN;
+    svtPool.dist = distMethod.GAUSSIAN;
+    goldPool.dist = distMethod.GAUSSIAN;
+    
     // do some rolls for gaussian distributed pool.
     pool.draw(10000);
     svtPool.draw(10000);
     goldPool.draw(10000);
-    
-    // switch to 
+
+    // switch back to user-specified configuration
     updatePoolConfig();
 }
 
