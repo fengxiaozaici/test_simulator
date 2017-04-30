@@ -21,8 +21,232 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
   <h3 align="center">Fate/Accel Zero Order Pickup召唤（日替）</h3>
   <hr>
-  
-  <div class="container" align="center">
+ 
+ <div class="container" align="center">
+        <div class="row">
+          <div class="col-sm-12">
+            <img src="http://kazemai.github.io/fgo-vz/common/images/2016/04/summon_20160427_xdmcha.jpg" class="img-thumbnail" height="232" width="640" align="center"/>
+          </div>
+        </div>
+  		<div class="row">
+  		<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" 
+                href="#upRateConfig">
+                卡池UP率设定
+                </a>
+            </h4>
+        </div>
+        <div id="upRateConfig" class="panel-collapse collapse">
+            <div class="panel-body">
+              <div class="col-sm-6 col-xs-12">
+                <form class="form-horizontal" role="form">
+                  <div class="form-group">
+                    <label class="col-sm-6 control-label">SSR从者UP几率</label>
+                    <div class="col-sm-6">
+                      <div class="input-group">
+                          <input type="number" class="form-control" value="66" min="0" max="100" onchange="sanityCheck(this);" id="serv5UpRate">
+                          <span class="input-group-addon">%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-6 control-label">SR从者UP几率</label>
+                    <div class="col-sm-6">
+                      <div class="input-group">
+                          <input type="number" class="form-control" value="40" min="0" max="100" onchange="sanityCheck(this);" id="serv4UpRate">
+                          <span class="input-group-addon">%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-6 control-label">R从者UP几率</label>
+                    <div class="col-sm-6">
+                      <div class="input-group">
+                          <input type="number" class="form-control" value="20" min="0" max="100" onchange="sanityCheck(this);" id="serv3UpRate">
+                          <span class="input-group-addon">%</span>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              
+              <div class="col-sm-6 col-xs-12">
+                <form class="form-horizontal" role="form">
+                  <div class="form-group">
+                    <label class="col-sm-6 control-label">SSR礼装UP几率</label>
+                    <div class="col-sm-6">
+                      <div class="input-group">
+                          <input type="number" class="form-control" value="66" min="0" max="100" onchange="sanityCheck(this);" id="cft5UpRate">
+                          <span class="input-group-addon">%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-6 control-label">SR礼装UP几率</label>
+                    <div class="col-sm-6">
+                      <div class="input-group">
+                          <input type="number" class="form-control" value="40" min="0" max="100" onchange="sanityCheck(this);" id="cft4UpRate">
+                          <span class="input-group-addon">%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-6 control-label">R礼装UP几率</label>
+                    <div class="col-sm-6">
+                      <div class="input-group">
+                          <input type="number" class="form-control" value="20" min="0" max="100" onchange="sanityCheck(this);" id="cft3UpRate">
+                          <span class="input-group-addon">%</span>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="row">
+                <div class="col-sm-3 col-sm-offset-2 col-xs-12">
+                  <a class="btn btn-success btn-block" href="javascript:void(0)" role="button" onclick="setUpRate();">确认</a>
+                </div>
+                <div class="col-sm-3 col-sm-offset-3 col-xs-12">
+                  <a class="btn btn-default btn-block" href="javascript:void(0)" role="button" onclick="resetUpRate();">还原</a>
+                </div>
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" 
+                href="#dropRateConfig">
+                卡池出率设定
+                </a>
+            </h4>
+        </div>
+        <div id="dropRateConfig" class="panel-collapse collapse">
+            <div class="panel-body">
+              <div class="col-sm-6 col-xs-12">
+                <form class="form-horizontal" role="form">
+                  <div class="form-group">
+                    <label class="col-sm-6 control-label">SSR从者出率</label>
+                    <div class="col-sm-6">
+                      <div class="input-group">
+                          <input type="number" class="form-control" value="1" min="0" max="100" onchange="sanityCheck(this);" id="serv5Rate">
+                          <span class="input-group-addon">%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-6 control-label">SR从者出率</label>
+                    <div class="col-sm-6">
+                      <div class="input-group">
+                          <input type="number" class="form-control" value="3" min="0" max="100" onchange="sanityCheck(this);" id="serv4Rate">
+                          <span class="input-group-addon">%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-6 control-label">R从者出率</label>
+                    <div class="col-sm-6">
+                      <div class="input-group">
+                          <input type="number" class="form-control" value="40" min="0" max="100" onchange="sanityCheck(this);" id="serv3Rate">
+                          <span class="input-group-addon">%</span>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              
+              <div class="col-sm-6 col-xs-12">
+                <form class="form-horizontal" role="form">
+                  <div class="form-group">
+                    <label class="col-sm-6 control-label">SSR礼装出率</label>
+                    <div class="col-sm-6">
+                      <div class="input-group">
+                          <input type="number" class="form-control" value="4" min="0" max="100" onchange="sanityCheck(this);" id="cft5Rate">
+                          <span class="input-group-addon">%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-6 control-label">SR礼装出率</label>
+                    <div class="col-sm-6">
+                      <div class="input-group">
+                          <input type="number" class="form-control" value="12" min="0" max="100" onchange="sanityCheck(this);" id="cft4Rate">
+                          <span class="input-group-addon">%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-6 control-label">R礼装出率</label>
+                    <div class="col-sm-6">
+                      <div class="input-group">
+                          <input type="number" class="form-control" value="40" min="0" max="100" onchange="sanityCheck(this);" id="cft3Rate">
+                          <span class="input-group-addon">%</span>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="row">
+                <div class="col-sm-3 col-sm-offset-2 col-xs-12">
+                  <a class="btn btn-success btn-block" href="javascript:void(0)" role="button" onclick="setDropRate();">确认</a>
+                </div>
+                <div class="col-sm-3 col-sm-offset-3 col-xs-12">
+                  <a class="btn btn-default btn-block" href="javascript:void(0)" role="button" onclick="resetDropRate();">还原</a>
+                </div>
+              </div>
+              
+            </div>
+        </div>
+    </div>
+</div>
+  		</div>
+  		<div class="row">
+          <div class="col-md-3 col-md-offset-2 col-sm-4 col-xs-6">
+                  <a class="btn btn-primary btn-lg" href="javascript:void(0)" role="button" onclick="clearResult();getOne();">召唤1次</a>
+          </div>
+          <div class="col-md-3 col-sm-4 col-xs-6">
+            <a class="btn btn-primary btn-lg" href="javascript:void(0)" role="button" onclick="getTen();">召唤10次</a>
+          </div>
+          <div class="col-md-1 col-sm-2 col-xs-3">
+            <img src="http://img1.ali213.net/webgamepic/uploadfile/news/2015/06/29/ali20150629130520_49018_600.jpg" height="45" width="45"/>
+          </div>
+          <div class="col-md-1 col-sm-2 col-xs-3">
+            <span align="left"><font size="6"><p id="quartz">140</p></font>
+            </span>
+          </div>    
+          
+          <div class="col-md-2 col-sm-6 col-xs-3">
+                <font size="3"><label>
+                  <input type="checkbox" value="" id="auto_buy">
+                    自动购买圣晶石
+                </label></font>
+          </div>
+          <div class="col-md-2 col-sm-6 col-xs-3">
+                <font size="3"><label>
+                  <input type="checkbox" value="" id="gaussian" onclick="updatePoolConfig();">
+                    伪随机卡池
+                </label></font>
+          </div>
+
+        </div>
+</div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  <!--div class="container" align="center">
     
     <img src="http://kazemai.github.io/fgo-vz/common/images/2016/04/summon_20160427_xdmcha.jpg" class="img-thumbnail" height="232" width="640"/>
     <p></p>
@@ -43,7 +267,7 @@
       <input type="checkbox" id="gaussian" onclick="updatePoolConfig();">伪随机卡池</input></span>
       </div>
       
-    </div>
+    </div-->
       
   </div>
     <div class="container">

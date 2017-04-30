@@ -13,6 +13,89 @@ var cards = Object.freeze({"pickUpServ5": 0, "Serv5": 0,
     isServant : function(n){return n % 2 == 0;},
     isGold : function(n){return n < 4;}});
 
+    
+// drop rate:
+var svt5Rate = 100; //1%
+var svt4Rate = 300; //3%
+var svt3Rate = 4000;//40%
+var cft5Rate = 400; //4%
+var cft4Rate = 1200;//12%
+var cft3Rate = 4000;//40%    
+ 
+// I made these numbers up! feel free to tweak them
+var svt5UpRate = 0.66;
+var svt4UpRate = 0.5;
+var svt3UpRate = 0.2;
+var cft5UpRate = 0.66;
+var cft4UpRate = 0.5;
+var cft3UpRate = 0.2;
+
+var minUpRate = 0;
+var maxUpRate = 100;
+
+function sanityCheck(input) {
+    var val = parseInt(input.value);
+    if (val < minUpRate) {
+        input.value = minUpRate;
+    }
+    if (val > maxUpRate) {
+        input.value = maxUpRate;
+    }
+}
+
+function setUpRate() {
+    svt5UpRate = parseInt($("#serv5UpRate").val()) / 100;
+    svt4UpRate = parseInt($("#serv4UpRate").val()) / 100;
+    svt3UpRate = parseInt($("#serv3UpRate").val()) / 100;
+    cft5UpRate = parseInt($("#cft5UpRate").val()) / 100;
+    cft4UpRate = parseInt($("#cft4UpRate").val()) / 100;
+    cft3UpRate = parseInt($("#cft3UpRate").val()) / 100;
+    resetPools();
+}
+ 
+function resetUpRate() {
+    $("#serv5UpRate").val((svt5UpRate*100 | 0).toString());
+    $("#serv4UpRate").val((svt4UpRate*100 | 0).toString());
+    $("#serv3UpRate").val((svt3UpRate*100 | 0).toString());
+    $("#cft5UpRate").val((cft5UpRate*100 | 0).toString());
+    $("#cft4UpRate").val((cft4UpRate*100 | 0).toString());
+    $("#cft3UpRate").val((cft3UpRate*100 | 0).toString());
+}
+
+function setDropRate() {
+    svt5Rate = parseInt($("#serv5Rate").val()) * 100;
+    svt4Rate = parseInt($("#serv4Rate").val()) * 100;
+    svt3Rate = parseInt($("#serv3Rate").val()) * 100;
+    cft5Rate = parseInt($("#cft5Rate").val()) * 100;
+    cft4Rate = parseInt($("#cft4Rate").val()) * 100;
+    cft3Rate = parseInt($("#cft3Rate").val()) * 100;
+    resetPools();
+}
+ 
+function resetDropRate() {
+    $("#serv5Rate").val((svt5Rate/100 | 0).toString());
+    $("#serv4Rate").val((svt4Rate/100 | 0).toString());
+    $("#serv3Rate").val((svt3Rate/100 | 0).toString());
+    $("#cft5Rate").val((cft5Rate/100 | 0).toString());
+    $("#cft4Rate").val((cft4Rate/100 | 0).toString());
+    $("#cft3Rate").val((cft3Rate/100 | 0).toString());
+}
+
+function resetPools() {
+    initialiseDrawPools({ "pickUpServ5" : pickUpServ5,
+                      "Serv5" : serv5,
+                      "pickUpServ4" : pickUpServ4,
+                      "Serv4" : serv4,
+                      "pickUpServ3" : pickUpServ3,
+                      "Serv3" : serv3,
+                      "pickUpCft5" : pickUpCft5,
+                      "Craft5" : craft5,
+                      "pickUpCft4" : pickUpCft4,
+                      "Craft4" : craft4,
+                      "pickUpCft3" : pickUpCft3, 
+                      "Craft3" : craft3});
+}
+    
 function initialiseDrawPools(cardPool) {
     
     var cardArr = tagCards(cardPool);

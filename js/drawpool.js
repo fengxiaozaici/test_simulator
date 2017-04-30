@@ -239,7 +239,7 @@ DrawPool = function() {
 
 DrawPool.prototype = {
     putItem : function(_value, _weight) {
-        if (isInt(this.scaleFactor * _weight)) {
+        if (_weight > 0 && isInt(this.scaleFactor * _weight)) {
             this.item_dict[JSON.stringify(_value)] = this.scaleFactor * _weight;
         } else {
             throw 'weight must be integer';
@@ -247,7 +247,9 @@ DrawPool.prototype = {
     },
     
     putItemWithoutScaling : function(_value, _weight) {
-        this.item_dict[JSON.stringify(_value)] = _weight;
+        if (_weight > 0){
+            this.item_dict[JSON.stringify(_value)] = _weight;
+        }
     },
     
     putMultiItems : function(_valueArray, _weight) {
