@@ -236,40 +236,6 @@
 </div>
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-  <!--div class="container" align="center">
-    
-    <img src="http://kazemai.github.io/fgo-vz/common/images/2016/04/summon_20160427_xdmcha.jpg" class="img-thumbnail" height="232" width="640"/>
-    <p></p>
-    <div class="row">
-      <div class="col-md-3 col-md-offset-2 col-xs-6">
-        <a class="btn btn-primary btn-lg" href="javascript:void(0)" role="button" onclick="clearResult();getOne();">召唤1次</a>
-      </div>
-      <div class="col-md-2 col-xs-6">
-        <a class="btn btn-primary btn-lg" href="javascript:void(0)" role="button" onclick="getTen();">召唤10次</a>
-      </div>
-      <div class="col-md-1 col-xs-2 col-xs-offset-6 col-md-offset-0">
-      <img src="http://img1.ali213.net/webgamepic/uploadfile/news/2015/06/29/ali20150629130520_49018_600.jpg" height="45" width="45"/>
-      </div>
-      <div class="col-md-2 col-xs-4">
-      <span align="left"><font size="6"><p id="quartz">140</p></font>
-      <input type="checkbox" id="auto_buy">自动购买圣晶石</input>
-      <p></p>
-      <input type="checkbox" id="gaussian" onclick="updatePoolConfig();">伪随机卡池</input></span>
-      </div>
-      
-    </div-->
-      
-  </div>
     <div class="container">
     <div class="row">
       <div class="col-md-2 col-md-offset-1 col-xs-4 col-xs-offset-0">
@@ -335,13 +301,19 @@
       </div>
   </div>
   </div>
-      <p align="center">修改自原作者：<a href="https://github.com/kirliavc/test_simulator" target="_blank">kirliavc@github</a>,<a href="https://github.com/ssz66666/test_simulator" target="_blank">ssz66666@github</a></p>
+      <hr>
+      <p>卡池列表：</p>
+      <p id="index"></p>
+      <hr>
+      <p align="center">作者：<a href="https://github.com/konatasick/test_simulator" target="_blank">konatasick@github</a>,修改自原作者：<a href="https://github.com/kirliavc/test_simulator" target="_blank">kirliavc@github</a>,<a href="https://github.com/ssz66666/test_simulator" target="_blank">ssz66666@github</a></p>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="js/drawpool.js"></script>
     <script src="js/poolemu.js"></script>
+    <script src="js/index.js"></script>
     <script src="js/poolinfo_xmas2.js"></script>
+      
   </body>
 </html>
