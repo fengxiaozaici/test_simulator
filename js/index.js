@@ -25,6 +25,7 @@ myObj = {
         { "name": "[第七章2·羽蛇神]", "info": "seventh2.html" },
         { "name": "[终章·梅林]", "info": "final.html" },
         { "name": "[新年·武藏]", "info": "newyear.html" },
+        { "name": "[王哈桑]", "info": "yama.html" },
     ]
 }
 
