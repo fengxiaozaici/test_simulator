@@ -19,7 +19,8 @@ myObj = {
         { "name": "[圆桌骑士]", "info": "knights.html" },
         { "name": "[圣诞节复刻·杰克]", "info": "xmas1.html" },
         { "name": "[天草四郎]", "info": "shiro.html" },
-        { "name": "[新圣诞节·弓凛]", "info": "xmas2.html" }
+        { "name": "[新圣诞节·弓凛]", "info": "xmas2.html" },
+        { "name": "[阿蒂拉]", "info": "altila.html" }
     ]
 }
 
