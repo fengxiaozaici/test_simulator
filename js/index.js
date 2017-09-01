@@ -22,7 +22,8 @@ myObj = {
         { "name": "[新圣诞节·弓凛]", "info": "xmas2.html" },
         { "name": "[阿蒂拉]", "info": "altila.html" },
         { "name": "[第七章1·恩奇都]", "info": "seventh.html" },
-        { "name": "[第七章2·羽蛇神]", "info": "seventh2.html" }
+        { "name": "[第七章2·羽蛇神]", "info": "seventh2.html" },
+        { "name": "[终章·梅林]", "info": "final.html" },
     ]
 }
 
