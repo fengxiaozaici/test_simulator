@@ -27,6 +27,7 @@ myObj = {
         { "name": "[新年·武藏]", "info": "newyear.html" },
         { "name": "[王哈桑]", "info": "yama.html" },
         { "name": "[月神复刻·俄里翁]", "info": "tsukimil.html" },
+        { "name": "[监狱塔复刻·伯爵]", "info": "gankutsuou.html" },
     ]
 }
 
