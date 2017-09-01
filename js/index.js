@@ -29,6 +29,7 @@ myObj = {
         { "name": "[月神复刻·俄里翁]", "info": "tsukimil.html" },
         { "name": "[监狱塔复刻·伯爵]", "info": "gankutsuou.html" },
         { "name": "[800wDL·达芬奇]", "info": "800w.html" },
+        { "name": "[情人节·BX]", "info": "valentine.html" },
     ]
 }
 
