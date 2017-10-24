@@ -31,7 +31,9 @@ myObj = {
         { "name": "[800wDL·达芬奇]", "info": "800w.html" },
         { "name": "[情人节·BX]", "info": "valentine.html" },
         { "name": "[新宿1·新宿Archer]", "info": "shinjuku.html" },
-        { "name": "[新宿2·黑A]", "info": "shinjuku2.html" }
+        { "name": "[新宿2·黑A]", "info": "shinjuku2.html" },
+        { "name": "[白情复刻·天草四郎]", "info": "white1.html" },
+        { "name": "[新白情·旧剑]", "info": "white2.html" }
     ]
 }
 
