@@ -46,7 +46,8 @@ myObj = {
         { "name": "[新泳装1·尼禄]", "info": "2017summer1.html" },
         { "name": "[新泳装2·黑王]", "info": "2017summer2.html" },
         { "name": "[新泳装3·梅芙三藏]", "info": "2017summer3.html" },
-        { "name": "[尼禄祭2017·布姐]", "info": "nero3.html" }
+        { "name": "[尼禄祭2017·布姐]", "info": "nero3.html" },
+        { "name": "[Fate/HF·樱]", "info": "fatehf.html" }
     ]
 }
 
