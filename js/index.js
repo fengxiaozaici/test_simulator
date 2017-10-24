@@ -34,7 +34,8 @@ myObj = {
         { "name": "[新宿2·黑A]", "info": "shinjuku2.html" },
         { "name": "[白情复刻·天草四郎]", "info": "white1.html" },
         { "name": "[新白情·旧剑]", "info": "white2.html" },
-        { "name": "[本能寺复刻·冲田总司]", "info": "honnouji.html" }
+        { "name": "[本能寺复刻·冲田总司]", "info": "honnouji.html" },
+        { "name": "[明治维新·土方岁三]", "info": "meiji.html" }
     ]
 }
 
