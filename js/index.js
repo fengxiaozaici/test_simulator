@@ -42,7 +42,9 @@ myObj = {
         { "name": "[900wDL·弓凛]", "info": "900w.html" },
         { "name": "[雅戈泰1·不夜城的Caster]", "info": "agarta1.html" },
         { "name": "[雅戈泰2·德雷克]", "info": "agarta2.html" },
-        { "name": "[二周年·福尔摩斯]", "info": "2nd.html" }
+        { "name": "[二周年·福尔摩斯]", "info": "2nd.html" },
+        { "name": "[新泳装1·尼禄]", "info": "2017summer1.html" },
+        { "name": "[新泳装2·黑王]", "info": "2017summer2.html" }
     ]
 }
 
