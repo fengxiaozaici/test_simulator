@@ -38,7 +38,11 @@ myObj = {
         { "name": "[明治维新·土方岁三]", "info": "meiji.html" },
         { "name": "[CCC预热·CCC众]", "info": "ccc0.html" },
         { "name": "[CCC·Meltlilith]", "info": "ccc1.html" },
-        { "name": "[CCC2·杀生院祈荒]", "info": "ccc2.html" }
+        { "name": "[CCC2·杀生院祈荒]", "info": "ccc2.html" },
+        { "name": "[900wDL·弓凛]", "info": "900w.html" },
+        { "name": "[雅戈泰1·不夜城的Caster]", "info": "agarta1.html" },
+        { "name": "[雅戈泰2·德雷克]", "info": "agarta2.html" },
+        { "name": "[二周年·福尔摩斯]", "info": "2nd.html" }
     ]
 }
 
