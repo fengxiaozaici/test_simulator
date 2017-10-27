@@ -11,7 +11,7 @@ myObj = {
         { "name": "[泳装2·弓呆]", "info": "summer2.html" },
         { "name": "[第六章2·白枪呆]", "info": "sixth2.html" },
         { "name": "[魔法少女·伊莉雅]", "info": "prisma.html" },
-        { "name": "[职阶日替·术]", "info": "caster.html" },
+        { "name": "[职阶日替·术]", "info": "caster" },
         { "name": "[尼禄祭再临·花嫁尼禄]", "info": "nero2.html" },
         { "name": "[700wDL·黑贞]", "info": "700w.html" },
         { "name": "[万圣节复刻·玉藻前]", "info": "halloween1.html" },
