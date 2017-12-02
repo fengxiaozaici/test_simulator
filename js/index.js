@@ -53,7 +53,8 @@ myObj = {
         { "name": "[下总国1·武藏]", "info": "7kengou.html" },
         { "name": "[下总国2·源赖光酒吞]", "info": "7kengou2.html" },
         { "name": "[万圣节2017·刑部姬]", "info": "halloween3.html" },
-        { "name": "[FA·天草四郎]", "info": "apocrypha.html" }
+        { "name": "[FA·天草四郎]", "info": "apocrypha.html" },
+        { "name": "[塞勒姆·喀耳刻哪吒]", "info": "salem.html" }
     ]
 }
 
