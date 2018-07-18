@@ -57,7 +57,8 @@ myObj = {
         { "name": "[塞勒姆·喀耳刻哪吒]", "info": "salem.html" },
         { "name": "[塞勒姆2·阿比盖尔]", "info": "salem2.html" },
         { "name": "[圣诞2017·艾蕾]", "info": "xmas3.html" },
-        { "name": "[新年·葛饰北斋]", "info": "newyear18.html" }
+        { "name": "[新年·葛饰北斋]", "info": "newyear18.html" },
+        { "name": "[赝作复刻·黑贞]", "info": "re_counterfeit.html" }
     ]
 }
 
