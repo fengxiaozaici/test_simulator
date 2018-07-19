@@ -60,7 +60,8 @@ myObj = {
         { "name": "[新年·葛饰北斋]", "info": "newyear18.html" },
         { "name": "[赝作复刻·黑贞]", "info": "re_counterfeit.html" },
         { "name": "[百层塔·金时奶光酒吞]", "info": "setsubun.html" },
-        { "name": "[情人节2018·女帝]", "info": "valentine2018.html" }
+        { "name": "[情人节2018·女帝]", "info": "valentine2018.html" },
+        { "name": "[空境复刻·两仪式]", "info": "garden.html" }
     ]
 }
 
