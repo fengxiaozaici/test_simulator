@@ -1,5 +1,5 @@
 var times=0;
-var quartz=167;
+var quartz=140;
 var money=0;
 var log = [];
 
@@ -329,14 +329,15 @@ function shuffle(a) {
 
 function buyQuartz(){
     if($("#auto_buy").is(':checked')){
-        quartz+=167;
+        quartz+=140;
         money+=518;
         $("#money").text(money);
         return true;
     }
-    var buy=confirm("您的圣晶石不足，是否花费518元购买167颗圣晶石？");
+        
+    var buy=confirm("您的圣晶石不足，是否花费518元购买140颗圣晶石？");
     if(buy){
-        quartz+=167;
+        quartz+=140;
         money+=518;
         alert("购买圣晶石成功。您目前持有圣晶石："+quartz);
         $("#quartz").text(quartz);
