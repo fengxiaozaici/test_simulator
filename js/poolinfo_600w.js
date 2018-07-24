@@ -21,6 +21,14 @@ pool.gaussianStdev = 1/3;
 svtPool.gaussianStdev = 1/3;
 goldPool.gaussianStdev = 1/3;
 
+// remove this line if not using the default pick-up rates
+setDefaultUpRates({ "pickUpServ5" : pickUpServ5,
+                      "pickUpServ4" : pickUpServ4,
+                      "pickUpServ3" : pickUpServ3,
+                      "pickUpCft5" : pickUpCft5,
+                      "pickUpCft4" : pickUpCft4,
+                      "pickUpCft3" : pickUpCft3 });
+
 resetUpRate();
 resetDropRate();
 // populate pools

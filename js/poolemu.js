@@ -22,12 +22,12 @@ var cft5Rate = 400; //4%
 var cft4Rate = 1200;//12%
 var cft3Rate = 4000;//40%    
  
-// I made these numbers up! feel free to tweak them
-var svt5UpRate = 0.66;
+// pick-up rate:
+var svt5UpRate = 0.7;
 var svt4UpRate = 0.5;
-var svt3UpRate = 0.2;
-var cft5UpRate = 0.66;
-var cft4UpRate = 0.5;
+var svt3UpRate = 0.1;
+var cft5UpRate = 0.375;
+var cft4UpRate = 1/3;
 var cft3UpRate = 0.2;
 
 var minUpRate = 0;
@@ -81,6 +81,127 @@ function resetDropRate() {
     $("#cft5Rate").val((cft5Rate/100).toString());
     $("#cft4Rate").val((cft4Rate/100).toString());
     $("#cft3Rate").val((cft3Rate/100).toString());
+}
+
+function setDefaultUpRates(cardPool) {
+    // compute and set the default pick-up rate based on the published official figures
+    // numbers based on the NGA post http://bbs.ngacn.cc/read.php?tid=13981354 by @Seniorious (in Chinese)
+    // Note: special cases in multiple pick-up pools, i.e. not equal probability splitting are not considered.
+    
+    switch(cardPool.pickUpServ5.length) {
+        case 1:
+            svt5UpRate = 0.7; // 0.7%
+            break;
+        case 2:
+            svt5UpRate = 0.8; // 0.4% each
+            break;
+        case 3:
+            svt5UpRate = 0.9; // 0.3% each
+            break;
+        case 4:
+            // using 0.225% for each svt
+            // from CN server
+            svt5UpRate = 0.9;
+            break;
+        default:
+            // using default 0.7%
+            svt5UpRate = 0.7;
+            break;
+    }
+    switch(cardPool.pickUpServ4.length) {
+        case 1:
+            svt4UpRate = 0.5; // 1.5%
+            break;
+        case 2:
+            svt4UpRate = 0.8; // 1.2% each
+            break;
+        case 3:
+            svt4UpRate = 0.7; // 0.7% each
+            break;
+        case 4:
+            svt4UpRate = 14/15; // 0.7% each
+            break;
+        case 5:
+            svt4UpRate = 5/6; // 0.5% each
+            break;
+        default:
+            // using default 0.5%
+            svt4UpRate = 0.5;
+            break;
+    }
+
+    switch(cardPool.pickUpServ3.length) {
+        case 1:
+            svt3UpRate = 0.1; // 4%
+            break;
+        case 2:
+            svt3UpRate = 0.2; // 4% each
+            break;
+        case 3:
+            svt3UpRate = 0.3; // 4% each
+            break;
+        case 4:
+            svt3UpRate = 0.4; // 4% each
+            break;
+        default:
+            // using default 4%
+            svt3UpRate = 0.1;
+            break;
+    }
+    switch(cardPool.pickUpCft5.length) {
+        case 1:
+            cft5UpRate = 0.375; // 1.5%
+            break;
+        case 2:
+            cft5UpRate = 0.7; // 1.4% each
+            break;
+        case 3:
+            cft5UpRate = 0.9; // 1.2% each
+            break;
+        case 4:
+            cft5UpRate = 0.9; // 0.9% each
+            break;
+        case 5:
+            cft5UpRate = 0.875; // 0.7% each
+            break;
+        default:
+            // using default 1.5%
+            cft5UpRate = 0.375;
+            break;
+    }
+    switch(cardPool.pickUpCft4.length) {
+        case 1:
+            cft4UpRate = 1/3; // 4%
+            break;
+        case 2:
+            cft4UpRate = 2/3; // 4% each
+            break;
+        case 3:
+            cft4UpRate = 0.75; // 3% each
+            break;
+        case 4:
+            cft4UpRate = 5/6; // 2.5% each
+            break;
+        default:
+            // using default 4%
+            cft4UpRate = 1/3;
+            break;
+    }
+    switch(cardPool.pickUpCft3.length) {
+        case 1:
+            cft3UpRate = 0.2; // 8%
+            break;
+        case 2:
+            cft3UpRate = 0.4; // 8% each
+            break;
+        case 3:
+            cft3UpRate = 0.6; // 8% each
+            break;
+        default:
+            // using default 8%
+            cft3UpRate = 0.2;
+            break;
+    }
 }
 
 function resetPools() {
