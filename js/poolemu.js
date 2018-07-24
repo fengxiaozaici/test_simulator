@@ -83,7 +83,7 @@ function resetDropRate() {
     $("#cft3Rate").val((cft3Rate/100).toString());
 }
 
-function setDefaultUpRates(cardPool) {
+function setDefaultUpRates(cardPool, highCft5UpRate = false) {
     // compute and set the default pick-up rate based on the published official figures
     // numbers based on the NGA post http://bbs.ngacn.cc/read.php?tid=13981354 by @Seniorious (in Chinese)
     // Note: special cases in multiple pick-up pools, i.e. not equal probability splitting are not considered.
@@ -150,7 +150,11 @@ function setDefaultUpRates(cardPool) {
     }
     switch(cardPool.pickUpCft5.length) {
         case 1:
-            cft5UpRate = 0.375; // 1.5%
+            if (highCft5UpRate) {
+                cft5UpRate = 0.7; // 2.8% for later pools
+            } else {
+                cft5UpRate = 0.375; // 1.5%
+            }
             break;
         case 2:
             cft5UpRate = 0.7; // 1.4% each
