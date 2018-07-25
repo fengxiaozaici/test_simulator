@@ -28,7 +28,7 @@ setDefaultUpRates({ "pickUpServ5" : pickUpServ5,
                       "pickUpServ3" : pickUpServ3,
                       "pickUpCft5" : pickUpCft5,
                       "pickUpCft4" : pickUpCft4,
-                      "pickUpCft3" : pickUpCft3 });
+                      "pickUpCft3" : pickUpCft3 }, true);
 
 resetUpRate();
 resetDropRate();
