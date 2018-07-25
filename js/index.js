@@ -65,7 +65,8 @@ myObj = {
         { "name": "[白情2018·旧剑]", "info": "cbc2018", "img": "http://kazemai.github.io/fgo-vz/common/images/2018/cbc2018_pu_bnscc/top_banner.png" },
         { "name": "[星战复刻·X毛]", "info": "re_saberwars", "img": "http://kazemai.github.io/fgo-vz/common/images/2018/re_saberwars_pesqa/summon_banner.png" },
         { "name": "[安娜塔西亚1·皇女]", "info": "anastasia1", "img": "http://kazemai.github.io/fgo-vz/common/images/2018/anastasia_full_oke1v/summon_banner.png" },
-        { "name": "[安娜塔西亚2·伊凡雷帝]", "info": "anastasia2", "img": "http://kazemai.github.io/fgo-vz/common/images/2018/anastasia2_ndr2a/summon_banner.png" }
+        { "name": "[安娜塔西亚2·伊凡雷帝]", "info": "anastasia2", "img": "http://kazemai.github.io/fgo-vz/common/images/2018/anastasia2_ndr2a/summon_banner.png" },
+        { "name": "[二周年福袋]", "info": "2yr_fb", "img": "http://kazemai.github.io/fgo-vz/common/images/2017/happyybag2nd_gbz6f/top_banner.png", "pool_type": "fukubukuro" }
     ]
 }
 
@@ -76,8 +77,14 @@ for (i in myObj.sites) {
 }
 */
 for (i of myObj.sites) {
-    x += "<a href=pool.html?" + i.info + ">" + i.name + "</a>";
+    if (i.hasOwnProperty("pool_type")) {
+        if (i.pool_type === "fukubukuro") {
+            x += "<a href=fukubukuro.html?" + i.info + ">" + i.name + "</a>";
 
+        }
+    } else {
+        x += "<a href=pool.html?" + i.info + ">" + i.name + "</a>";
+    }
 }
 
 
