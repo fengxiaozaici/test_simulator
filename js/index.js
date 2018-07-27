@@ -61,7 +61,12 @@ myObj = {
         { "name": "[赝作复刻·黑贞]", "info": "re_counterfeit", "img": "http://view.fate-go.jp/wp-content/uploads/2018/re_counterfeit_jdri8/summon_banner.png" },
         { "name": "[百层塔·金时奶光酒吞]", "info": "setsubun", "img": "http://view.fate-go.jp/wp-content/uploads/2018/setsubun_gfrjd/summon_banner.png" },
         { "name": "[情人节2018·女帝]", "info": "valentine2018", "img": "https://fgowiki.com/wp-content/uploads/2018/01/top_banner-1-1.png" },
-        { "name": "[空境复刻·两仪式]", "info": "garden", "img": "http://view.fate-go.jp/wp-content/uploads/2018/karanokyoukai_full_las1p/summon_banner.png" }
+        { "name": "[空境复刻·两仪式]", "info": "garden", "img": "http://view.fate-go.jp/wp-content/uploads/2018/karanokyoukai_full_las1p/summon_banner.png" },
+        { "name": "[白情2018·旧剑]", "info": "cbc2018", "img": "http://kazemai.github.io/fgo-vz/common/images/2018/cbc2018_pu_bnscc/top_banner.png" },
+        { "name": "[星战复刻·X毛]", "info": "re_saberwars", "img": "http://kazemai.github.io/fgo-vz/common/images/2018/re_saberwars_pesqa/summon_banner.png" },
+        { "name": "[安娜塔西亚1·皇女]", "info": "anastasia1", "img": "http://kazemai.github.io/fgo-vz/common/images/2018/anastasia_full_oke1v/summon_banner.png" },
+        { "name": "[安娜塔西亚2·伊凡雷帝]", "info": "anastasia2", "img": "http://kazemai.github.io/fgo-vz/common/images/2018/anastasia2_ndr2a/summon_banner.png" },
+        { "name": "[二周年福袋]", "info": "2yr_fb", "img": "http://kazemai.github.io/fgo-vz/common/images/2017/happyybag2nd_gbz6f/top_banner.png", "pool_type": "fukubukuro" }
     ]
 }
 
@@ -72,8 +77,14 @@ for (i in myObj.sites) {
 }
 */
 for (i of myObj.sites) {
-    x += "<a href=pool.html?" + i.info + ">" + i.name + "</a>";
+    if (i.hasOwnProperty("pool_type")) {
+        if (i.pool_type === "fukubukuro") {
+            x += "<a href=fukubukuro.html?" + i.info + ">" + i.name + "</a>";
 
+        }
+    } else {
+        x += "<a href=pool.html?" + i.info + ">" + i.name + "</a>";
+    }
 }
 
 

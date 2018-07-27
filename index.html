@@ -34,7 +34,17 @@
       <script language="javascript">
     var x = "";
     for (i of myObj.sites) {
-    var container = "<div class=\"container\"><a href=\"pool.html?" + i.info + "\"><img src=\"" + i.img + "\" class=\"img-thumbnail\"></a><p></p></div>";
+        var link = ""
+        if (i.hasOwnProperty("pool_type")) {
+            if (i.pool_type === "fukubukuro") {
+            link = "fukubukuro.html?" + i.info;
+
+            }
+        } else {
+            link = "pool.html?" + i.info;
+        }
+
+    container = "<div class=\"container\"><a href=\"" + link + "\"><img src=\"" + i.img + "\" class=\"img-thumbnail\"></a><p></p></div>";
     x = container + x;
 }
 
