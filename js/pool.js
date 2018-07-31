@@ -2,7 +2,7 @@ var defaultPoolName = "garden";
 var sStr = document.location.search;
 var result = undefined;
 
-if (sStr.startsWith("?")) {
+if (sStr.substr(0,1) === "?") {
     var n = sStr.substr(1);
     result = myObj.sites.find(function (p) { return p.info === n; });
 }
