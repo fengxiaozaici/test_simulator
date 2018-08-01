@@ -83,7 +83,7 @@ function resetDropRate() {
     $("#cft3Rate").val((cft3Rate/100).toString());
 }
 
-function setDefaultUpRates(cardPool, highCft5UpRate = false) {
+function setDefaultUpRates(cardPool, highCft5UpRate) {
     // compute and set the default pick-up rate based on the published official figures
     // numbers based on the NGA post http://bbs.ngacn.cc/read.php?tid=13981354 by @Seniorious (in Chinese)
     // Note: special cases in multiple pick-up pools, i.e. not equal probability splitting are not considered.
@@ -150,7 +150,7 @@ function setDefaultUpRates(cardPool, highCft5UpRate = false) {
     }
     switch(cardPool.pickUpCft5.length) {
         case 1:
-            if (highCft5UpRate) {
+            if (highCft5UpRate !== undefined && highCft5UpRate === true) {
                 cft5UpRate = 0.7; // 2.8% for later pools
             } else {
                 cft5UpRate = 0.375; // 1.5%
@@ -344,7 +344,7 @@ function showResult(resultArray) {
             case cards.Serv4:
             case cards.pickUpServ3:
             case cards.Serv3:
-                imgurl = "http://file.fgowiki.591mogu.com/fgo/head/"+r.item+".jpg";
+                imgurl = "https://img.fgowiki.com/fgo/head/"+r.item+".jpg";
                 break;
             case cards.pickUpCft5:
             case cards.Craft5:
@@ -352,7 +352,7 @@ function showResult(resultArray) {
             case cards.Craft4:
             case cards.pickUpCft3:
             case cards.Craft3:
-                imgurl = "http://fgowiki.com/fgo/equip/"+ r.item +".jpg";
+                imgurl = "https://fgowiki.com/fgo/equip/"+ r.item +".jpg";
                 break;
         };
         switch(r.tag)

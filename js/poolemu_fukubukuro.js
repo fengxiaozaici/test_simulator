@@ -163,7 +163,7 @@ function showResult(resultArray) {
             case cards.Serv4:
             case cards.pickUpServ3:
             case cards.Serv3:
-                imgurl = "http://file.fgowiki.591mogu.com/fgo/head/"+r.item+".jpg";
+                imgurl = "https://img.fgowiki.com/fgo/head/"+r.item+".jpg";
                 break;
             case cards.pickUpCft5:
             case cards.Craft5:
@@ -171,7 +171,7 @@ function showResult(resultArray) {
             case cards.Craft4:
             case cards.pickUpCft3:
             case cards.Craft3:
-                imgurl = "http://fgowiki.com/fgo/equip/"+ r.item +".jpg";
+                imgurl = "https://fgowiki.com/fgo/equip/"+ r.item +".jpg";
                 break;
         };
         switch(r.tag)
