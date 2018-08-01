@@ -163,7 +163,7 @@ function showResult(resultArray) {
             case cards.Serv4:
             case cards.pickUpServ3:
             case cards.Serv3:
-                imgurl = "https://fgowiki.com/fgo/head/"+r.item+".jpg";
+                imgurl = "https://img.fgowiki.com/fgo/head/"+r.item+".jpg";
                 break;
             case cards.pickUpCft5:
             case cards.Craft5:
